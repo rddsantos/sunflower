@@ -19,6 +19,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
+apply plugin: 'com.google.firebase.firebase-perf'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -96,6 +97,12 @@ dependencies {
     androidTestImplementation "androidx.work:work-testing:$rootProject.workVersion"
     androidTestImplementation "com.google.truth:truth:$rootProject.truthVersion"
     testImplementation "junit:junit:$rootProject.junitVersion"
+
+    // Add the dependency for the Performance Monitoring library
+    implementation 'com.google.firebase:firebase-perf:19.0.8'
+
+    implementation "org.junit.jupiter:junit-jupiter-api:5.6.2"
+    runtimeOnly "org.junit.jupiter:junit-jupiter-engine:5.6.2"
 }
 
 def getUnsplashAccess() {
